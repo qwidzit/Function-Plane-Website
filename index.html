@@ -83,14 +83,18 @@
           </p>
 
           <div class="hero__cta">
-            <a href="#download" class="btn btn--primary btn--lg">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3.6 20.5a1.6 1.6 0 0 0 2.4 1.4l13.4-7.7a1.6 1.6 0 0 0 0-2.8L6 3.7A1.6 1.6 0 0 0 3.6 5v15.5z"/></svg>
-              Download for Android
+            <a href="downloads/FunctionPlane.apk" download class="btn btn--primary btn--lg">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              Download APK
             </a>
             <a href="#download" class="btn btn--ghost btn--lg">
-              iOS &mdash; coming soon
+              All platforms
             </a>
           </div>
+          <p class="hero__notice">
+            <span aria-hidden="true">&#9432;</span>
+            Google Play review pending &mdash; install the APK directly from us in the meantime.
+          </p>
 
           <div class="hero__meta">
             <div class="meta-item"><strong>10</strong><span>chapters</span></div>
@@ -254,7 +258,22 @@
         </header>
 
         <div class="download">
-          <a class="store store--available" href="#" aria-label="Download Function Plane on Google Play">
+          <a class="store store--direct" href="downloads/FunctionPlane.apk" download aria-label="Download the Function Plane APK directly">
+            <div class="store__icon store__icon--direct">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"/>
+                <path d="m7 10 5 5 5-5"/>
+                <path d="M5 21h14"/>
+              </svg>
+            </div>
+            <div class="store__text">
+              <span class="store__small">Direct from us</span>
+              <span class="store__big">Download APK</span>
+            </div>
+            <div class="store__badge">Available now</div>
+          </a>
+
+          <a class="store store--soon" href="#" aria-disabled="true" aria-label="Function Plane on Google Play, in review">
             <div class="store__icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#34A853" d="M3.6 20.5a1.6 1.6 0 0 0 2.4 1.4l9.5-5.5-3.4-3.4z"/>
@@ -264,10 +283,10 @@
               </svg>
             </div>
             <div class="store__text">
-              <span class="store__small">Get it on</span>
+              <span class="store__small">Soon on</span>
               <span class="store__big">Google Play</span>
             </div>
-            <div class="store__badge">Available now</div>
+            <div class="store__badge store__badge--soon">In review</div>
           </a>
 
           <a class="store store--soon" href="#" aria-disabled="true" aria-label="Function Plane on the App Store, coming soon">
@@ -284,7 +303,9 @@
           </a>
         </div>
 
-        <p class="download__note">Function Plane is free with a single optional in-app tip. No accounts, no tracking sign-ups.</p>
+        <p class="download__note">
+          Google Play review is pending &mdash; install the APK directly while we wait. On Android, you may need to allow installs from your browser the first time.
+        </p>
       </div>
     </section>
 
