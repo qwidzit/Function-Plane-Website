@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Reset your password — Function Plane</title>
+  <meta name="description" content="Choose a new password for your Function Plane account." />
+  <meta name="theme-color" content="#0e0f10" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f7; --surface: #ffffff; --ink: #16171a; --ink-2: #3a3b3e;
+      --ink-3: #6c6d70; --line: #e5e3de; --accent: #0e0f10;
+      --field: #ffffff; --danger: #b3261e; --ok: #1c6b45;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e0f10; --surface: #161719; --ink: #f2f1ef; --ink-2: #c9c8c5;
+        --ink-3: #8a8987; --line: #26282b; --accent: #f2f1ef;
+        --field: #101113; --danger: #f2867c; --ok: #7fd0a6;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink-2);
+      font-family: 'Geist', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-weight: 400; line-height: 1.65; font-size: 16px;
+    }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 40px 22px 72px; }
+    .doc {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 18px; padding: 34px 28px;
+    }
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif; font-style: italic;
+      font-weight: 400; color: var(--ink); letter-spacing: -0.02em; line-height: 1.15;
+      font-size: 34px; margin: 0 0 4px;
+    }
+    p { margin: 10px 0; color: var(--ink-2); }
+    strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    .eyebrow {
+      font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-3); margin: 0 0 20px;
+    }
+    nav.top { margin-bottom: 20px; font-size: 14px; }
+    nav.top a { color: var(--ink-3); text-decoration: none; margin-right: 18px; }
+    nav.top a:hover { color: var(--ink); }
+    footer {
+      margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line);
+      font-size: 13px; color: var(--ink-3);
+    }
+    footer a { color: var(--ink-3); }
+
+    /* ----- form ----- */
+    [hidden] { display: none !important; }
+    .field { margin: 18px 0 0; }
+    label {
+      display: block; font-size: 14px; font-weight: 500;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .field__box { position: relative; }
+    input[type="password"], input[type="text"] {
+      width: 100%; padding: 13px 74px 13px 14px;
+      background: var(--field); color: var(--ink);
+      border: 1px solid var(--line); border-radius: 12px;
+      font-family: inherit; font-size: 16px; line-height: 1.3;
+      -webkit-appearance: none; appearance: none;
+    }
+    input:focus-visible {
+      outline: none; border-color: var(--ink-3);
+      box-shadow: 0 0 0 3px rgba(128,128,128,0.18);
+    }
+    input[aria-invalid="true"] { border-color: var(--danger); }
+    .toggle {
+      position: absolute; top: 50%; right: 8px; transform: translateY(-50%);
+      background: none; border: 0; padding: 8px 8px; cursor: pointer;
+      font-family: inherit; font-size: 13px; font-weight: 500;
+      color: var(--ink-3); text-decoration: underline; text-underline-offset: 2px;
+    }
+    .toggle:hover { color: var(--ink); }
+    .hint { font-size: 13px; color: var(--ink-3); margin: 6px 0 0; }
+    .err { font-size: 13.5px; color: var(--danger); margin: 6px 0 0; }
+    .btn {
+      display: block; width: 100%; margin-top: 22px;
+      padding: 14px 18px; border: 1px solid var(--accent); border-radius: 12px;
+      background: var(--accent); color: var(--bg);
+      font-family: inherit; font-size: 16px; font-weight: 500; line-height: 1.2;
+      cursor: pointer; -webkit-appearance: none; appearance: none;
+    }
+    .btn:hover { opacity: 0.88; }
+    .btn[disabled] { opacity: 0.55; cursor: default; }
+    .note { font-size: 14px; color: var(--ink-3); margin-top: 16px; }
+    .note--err { color: var(--danger); }
+    .callout {
+      margin-top: 16px; padding: 12px 14px;
+      border: 1px solid var(--line); border-radius: 12px;
+      font-size: 14.5px; color: var(--ink-2);
+    }
+    .callout--err { border-color: var(--danger); color: var(--danger); }
+    @media (max-width: 420px) {
+      .wrap { padding: 26px 16px 56px; }
+      .doc { padding: 26px 20px; border-radius: 16px; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a href="/">← Function Plane</a>
+    </nav>
+
+    <article class="doc">
+      <h1>Reset your password</h1>
+      <p class="eyebrow">Function Plane account</p>
+
+      <!-- 1. Checking the link -->
+      <section id="state-loading">
+        <p>Checking your reset link&hellip;</p>
+      </section>
+
+      <!-- 2. Link invalid / expired / already used -->
+      <section id="state-invalid" hidden>
+        <p id="invalid-msg">This reset link has expired or has already been used. Request a new one from the app.</p>
+        <p class="note">Open Function Plane, go to sign in, and tap <strong>Send reset link</strong> again. The new email will contain a fresh link.</p>
+      </section>
+
+      <!-- 3. Choose a new password -->
+      <section id="state-form" hidden>
+        <p>Choose a new password for your account.</p>
+
+        <form id="form" novalidate>
+          <div class="field">
+            <label for="pw1">New password</label>
+            <div class="field__box">
+              <input id="pw1" name="new-password" type="password" autocomplete="new-password"
+                     autocapitalize="off" autocorrect="off" spellcheck="false"
+                     aria-describedby="pw1-hint pw1-err" />
+              <button type="button" class="toggle" data-target="pw1" aria-label="Show password">Show</button>
+            </div>
+            <p class="hint" id="pw1-hint">At least 6 characters.</p>
+            <p class="err" id="pw1-err" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="pw2">Confirm new password</label>
+            <div class="field__box">
+              <input id="pw2" name="confirm-password" type="password" autocomplete="new-password"
+                     autocapitalize="off" autocorrect="off" spellcheck="false"
+                     aria-describedby="pw2-err" />
+              <button type="button" class="toggle" data-target="pw2" aria-label="Show password">Show</button>
+            </div>
+            <p class="err" id="pw2-err" hidden></p>
+          </div>
+
+          <button type="submit" class="btn" id="submit">Update password</button>
+          <p class="callout callout--err" id="submit-err" role="alert" hidden></p>
+        </form>
+      </section>
+
+      <!-- 4. Done -->
+      <section id="state-done" hidden>
+        <p><strong>Password updated.</strong> You can now sign in with your new password.</p>
+        <p class="note">Head back to the app and sign in with your email and the password you just set.</p>
+        <p><a href="https://functionplane.pages.dev">Back to Function Plane</a></p>
+      </section>
+
+      <footer>
+        <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="/">Back to Function Plane</a>
+      </footer>
+    </article>
+  </div>
+
+  <script src="/vendor/supabase-js-2.112.3.umd.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var SUPABASE_URL = 'https://miuxqxllxjvxddolpzno.supabase.co';
+    // Publishable (anon) key — safe to ship in a browser; row-level security applies.
+    var SUPABASE_ANON_KEY = 'sb_publishable_pDJTp_ZdnF0PrHz_USvuiA_mmUnopH8';
+    var MIN_LENGTH = 6;
+    var EXPIRED_MESSAGE = 'This reset link has expired or has already been used. Request a new one from the app.';
+
+    var el = function (id) { return document.getElementById(id); };
+
+    function show(name) {
+      ['loading', 'invalid', 'form', 'done'].forEach(function (s) {
+        el('state-' + s).hidden = (s !== name);
+      });
+    }
+
+    function showInvalid(message) {
+      el('invalid-msg').textContent = message || EXPIRED_MESSAGE;
+      show('invalid');
+    }
+
+    /* Supabase may hand back its params in the query string or in the fragment,
+       depending on the flow. Read both, query first. */
+    function urlParams() {
+      var query = new URLSearchParams(window.location.search);
+      var hash = new URLSearchParams(String(window.location.hash || '').replace(/^#/, ''));
+      return function (key) { return query.get(key) || hash.get(key); };
+    }
+
+    /* Drop the credential from the address bar once we have read it, so it is not
+       left in history, bookmarks or a shared screenshot. */
+    function scrubUrl() {
+      try {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      } catch (e) { /* non-fatal */ }
+    }
+
+    var param = urlParams();
+    var code = param('code');
+    var errorCode = param('error_code');
+    var errorParam = param('error');
+
+    // A stale or already-used link: Supabase redirects here with an error, no session.
+    if (errorCode || errorParam) {
+      showInvalid(EXPIRED_MESSAGE);
+      scrubUrl();
+      return;
+    }
+
+    if (!window.supabase || typeof window.supabase.createClient !== 'function') {
+      showInvalid('Could not load the password reset form. Please check your connection and open the link again.');
+      return;
+    }
+
+    var client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        // Implicit flow: the client consumes #access_token/#refresh_token itself on load.
+        detectSessionInUrl: true,
+        flowType: code ? 'pkce' : 'implicit',
+        persistSession: true,
+        autoRefreshToken: false
+      }
+    });
+
+    function resolveSession() {
+      if (code) {
+        // PKCE flow: trade the one-time code for a session.
+        return client.auth.exchangeCodeForSession(code).then(function (res) {
+          if (res && res.data && res.data.session) return res.data.session;
+          // detectSessionInUrl may have already spent the code — check for the session it left.
+          return client.auth.getSession().then(function (r) {
+            return (r && r.data && r.data.session) || null;
+          });
+        });
+      }
+      // Implicit flow: getSession() resolves after the fragment has been processed.
+      return client.auth.getSession().then(function (res) {
+        return (res && res.data && res.data.session) || null;
+      });
+    }
+
+    resolveSession().then(function (session) {
+      scrubUrl();
+      if (!session) { showInvalid(EXPIRED_MESSAGE); return; }
+      show('form');
+      el('pw1').focus();
+    }).catch(function () {
+      scrubUrl();
+      showInvalid(EXPIRED_MESSAGE);
+    });
+
+    /* ----- show / hide toggles ----- */
+    Array.prototype.forEach.call(document.querySelectorAll('.toggle'), function (btn) {
+      btn.addEventListener('click', function () {
+        var input = el(btn.getAttribute('data-target'));
+        var revealed = input.type === 'text';
+        input.type = revealed ? 'password' : 'text';
+        btn.textContent = revealed ? 'Show' : 'Hide';
+        btn.setAttribute('aria-label', revealed ? 'Show password' : 'Hide password');
+        input.focus();
+      });
+    });
+
+    /* ----- validation ----- */
+    var validated = false;
+
+    function setError(id, message) {
+      var box = el(id + '-err');
+      var input = el(id);
+      if (message) {
+        box.textContent = message;
+        box.hidden = false;
+        input.setAttribute('aria-invalid', 'true');
+      } else {
+        box.textContent = '';
+        box.hidden = true;
+        input.removeAttribute('aria-invalid');
+      }
+    }
+
+    function validate() {
+      var pw1 = el('pw1').value;
+      var pw2 = el('pw2').value;
+      var ok = true;
+
+      if (!pw1) { setError('pw1', 'Enter a new password.'); ok = false; }
+      else if (pw1.length < MIN_LENGTH) {
+        setError('pw1', 'Password must be at least ' + MIN_LENGTH + ' characters.');
+        ok = false;
+      } else { setError('pw1', null); }
+
+      if (!pw2) { setError('pw2', 'Confirm your new password.'); ok = false; }
+      else if (pw1 !== pw2) { setError('pw2', 'The two passwords do not match.'); ok = false; }
+      else { setError('pw2', null); }
+
+      return ok;
+    }
+
+    ['pw1', 'pw2'].forEach(function (id) {
+      el(id).addEventListener('input', function () { if (validated) validate(); });
+    });
+
+    /* ----- submit ----- */
+    el('form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      validated = true;
+      el('submit-err').hidden = true;
+
+      if (!validate()) return;
+
+      var button = el('submit');
+      button.disabled = true;
+      button.textContent = 'Updating…';
+
+      client.auth.updateUser({ password: el('pw1').value }).then(function (res) {
+        if (res && res.error) {
+          // Surface Supabase's own wording; the form stays usable for a retry.
+          el('submit-err').textContent = res.error.message;
+          el('submit-err').hidden = false;
+          button.disabled = false;
+          button.textContent = 'Update password';
+          return;
+        }
+        show('done');
+        // Leave no live session behind in this browser. The password is already
+        // changed at this point, so a failure here must not undo the success state.
+        client.auth.signOut().catch(function () { /* non-fatal */ });
+      }).catch(function (error) {
+        el('submit-err').textContent = (error && error.message) ? error.message : 'Something went wrong. Please try again.';
+        el('submit-err').hidden = false;
+        button.disabled = false;
+        button.textContent = 'Update password';
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
