@@ -1,6 +1,0 @@
-# Password reset landing page for Supabase recovery emails.
-# Cloudflare Pages already serves /auth/reset from auth/reset.html; these
-# rewrites make the extensionless URL explicit, since it is the exact string
-# registered in Supabase's Redirect URLs allow-list and must not 404.
-/auth/reset   /auth/reset.html   200
-/auth/reset/  /auth/reset.html   200
