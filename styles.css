@@ -683,23 +683,6 @@ em { font-style: italic; }
   box-shadow: none;
   border-color: var(--border);
 }
-.store--direct {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
-}
-.store--direct .store__small { color: rgba(255,255,255,0.6); }
-[data-theme="light"] .store--direct .store__small,
-:root:not([data-theme="dark"]) .store--direct .store__small { color: rgba(255,255,255,0.65); }
-[data-theme="dark"] .store--direct .store__small { color: rgba(0,0,0,0.55); }
-.store--direct .store__badge {
-  background: rgba(255,255,255,0.16);
-  color: inherit;
-}
-[data-theme="dark"] .store--direct .store__badge {
-  background: rgba(0,0,0,0.18);
-}
-.store__icon--direct { color: inherit; }
 
 .store--web {
   border-color: color-mix(in oklab, var(--c-blue) 30%, var(--border));
