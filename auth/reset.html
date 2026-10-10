@@ -143,7 +143,7 @@
                      aria-describedby="pw1-hint pw1-err" />
               <button type="button" class="toggle" data-target="pw1" aria-label="Show password">Show</button>
             </div>
-            <p class="hint" id="pw1-hint">At least 6 characters.</p>
+            <p class="hint" id="pw1-hint">At least 8 characters.</p>
             <p class="err" id="pw1-err" hidden></p>
           </div>
 
@@ -184,7 +184,7 @@
     var SUPABASE_URL = 'https://miuxqxllxjvxddolpzno.supabase.co';
     // Publishable (anon) key — safe to ship in a browser; row-level security applies.
     var SUPABASE_ANON_KEY = 'sb_publishable_pDJTp_ZdnF0PrHz_USvuiA_mmUnopH8';
-    var MIN_LENGTH = 6;
+    var MIN_LENGTH = 8;   // Auth's own minimum; anything shorter is refused server-side
     var EXPIRED_MESSAGE = 'This reset link has expired or has already been used. Request a new one from the app.';
 
     var el = function (id) { return document.getElementById(id); };
