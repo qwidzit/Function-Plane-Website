@@ -684,6 +684,12 @@ em { font-style: italic; }
   border-color: var(--border);
 }
 
+.store--play {
+  border-color: color-mix(in oklab, var(--c-green) 30%, var(--border));
+}
+.store--play:hover {
+  border-color: color-mix(in oklab, var(--c-green) 55%, var(--border-strong));
+}
 .store--web {
   border-color: color-mix(in oklab, var(--c-blue) 30%, var(--border));
 }
